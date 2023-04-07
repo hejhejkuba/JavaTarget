@@ -16,7 +16,7 @@ public class HelloWorldServlet extends HttpServlet {
         String message = "Hello World";
 
         // wypisanie wartości parametru "abc" przy użyciu filtru
-        if (fname == null) {
+        if (fname == null || fname.isEmpty()) {
             System.out.println(fname);
             // wypisanie "Hello World"
             response.setContentType("text/html");
@@ -24,7 +24,7 @@ public class HelloWorldServlet extends HttpServlet {
         }
         else{
             System.out.println(fname);
-            // wypisanie "Hello World"
+            // wypisanie "Hello $NAME"
             response.setContentType("text/html");
             response.getWriter().println("<h1>Hello " + fname + "</h1>");
         }
